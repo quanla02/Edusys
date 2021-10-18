@@ -127,7 +127,7 @@ public class HocVienJDialog extends javax.swing.JDialog {
         for(int i=0;i<tblDSHocVien.getRowCount();i++){
             int mahv = (int) tblDSHocVien.getValueAt(i, 1);
             HocVien hv = hvdao.findById(mahv+"");
-            hv.setDiem((float) tblDSHocVien.getValueAt(i, 4));
+            hv.setDiem(Float.parseFloat((String) tblDSHocVien.getValueAt(i, 4)));
             hvdao.update(hv);
         }
         MsgBox.alert(this, "Cập nhật điểm thành công!");

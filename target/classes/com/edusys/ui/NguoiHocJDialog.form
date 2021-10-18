@@ -478,7 +478,7 @@
                         <Column editable="false" title="Ng&#xe0;y sinh" type="java.lang.Object"/>
                         <Column editable="false" title="&#x110;i&#x1ec7;n tho&#x1ea1;i" type="java.lang.Object"/>
                         <Column editable="false" title="email" type="java.lang.Object"/>
-                        <Column editable="false" title="MaNV" type="java.lang.Object"/>
+                        <Column editable="false" title="Ghi ch&#xfa;" type="java.lang.Object"/>
                         <Column editable="false" title="Ng&#xe0;y DK" type="java.lang.Object"/>
                       </Table>
                     </Property>

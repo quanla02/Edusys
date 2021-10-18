@@ -10,7 +10,9 @@ import com.edusys.entity.ChuyenDe;
 import com.edusys.utils.Auth;
 import com.edusys.utils.MsgBox;
 import com.edusys.utils.XImage;
+import java.awt.Image;
 import java.io.File;
+import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
 import javax.swing.table.DefaultTableModel;
@@ -90,6 +92,9 @@ public class ChuyenDeJDialog extends javax.swing.JDialog {
     }
 
     public void insert() {
+        if(!isValidate()){
+            return;
+        }
         ChuyenDe cd = getForm();
         try {
             this.dao.insert(cd);
@@ -103,6 +108,9 @@ public class ChuyenDeJDialog extends javax.swing.JDialog {
     }
 
     public void update() {
+        if(!isValidate()){
+            return;
+        }
         ChuyenDe nv = getForm();
         try {
             this.dao.update(nv);
@@ -140,8 +148,11 @@ public class ChuyenDeJDialog extends javax.swing.JDialog {
         txtHocPhi.setText(cd.getHocPhi() + "");
         txtMoTa.setText(cd.getMoTa());
         if (cd.getHinh() != null) {
+            String path = "./src/img/";
             lblHinh.setToolTipText(cd.getHinh());
-            lblHinh.setIcon(XImage.read(cd.getHinh()));
+            Image image = new ImageIcon((path + cd.getHinh())).getImage().getScaledInstance(160, 200, Image.SCALE_SMOOTH);
+            Icon icon = new ImageIcon(image);
+            lblHinh.setIcon(icon);
         }
     }
 
@@ -178,6 +189,22 @@ public class ChuyenDeJDialog extends javax.swing.JDialog {
     public void last() {
         this.row = tblDanhSach.getRowCount() - 1;
         this.edit();
+    }
+
+    public boolean isValidate() {
+        if (txtHocPhi.getText().length() == 0 || txtMaCD.getText().length() == 0
+                || txtMoTa.getText().length() == 0 || txtTenCD.getText().length() == 0
+                || txtThoiLuong.getText().length() == 0) {
+            MsgBox.alert(this, "Không được trống");
+            return false;
+        }
+        try {
+            Integer.parseInt(txtThoiLuong.getText());
+        } catch (NumberFormatException e) {
+            MsgBox.alert(this, "Không đúng định dạng số");
+            return false;
+        }
+        return true;
     }
 
     @SuppressWarnings("unchecked")

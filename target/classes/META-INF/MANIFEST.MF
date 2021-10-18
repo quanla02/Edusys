@@ -1,5 +1,6 @@
 Manifest-Version: 1.0
-Built-By: Ciuz
-Build-Jdk: 16.0.2
+Build-Jdk-Spec: 16
+Class-Path: lib/mssql-jdbc-9.2.1.jre11.jar
+Main-Class: com.edusys.ui.EduSysJFrame
 Created-By: Maven Integration for Eclipse
 

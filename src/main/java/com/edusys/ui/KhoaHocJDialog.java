@@ -80,6 +80,26 @@ public class KhoaHocJDialog extends javax.swing.JDialog {
 
     }
 
+    public boolean isValidate() {
+        if(txtCD.getText().length()==0||txtGhiChu.getText().length()==0||
+                txtHocPhi.getText().length()==0||txtKhaiGiang.getText().length()==0||
+                txtNgayTao.getText().length()==0||txtNguoiTao.getText().length()==0||
+                txtThoiLuong.getText().length()==0){
+            return false;
+        }
+        try {
+            Double.parseDouble(txtHocPhi.getText());
+            Integer.parseInt(txtThoiLuong.getText());
+            XDate.toDate(txtKhaiGiang.getText(), "yyyy-MM-dd");
+        } catch (NumberFormatException e) {
+            MsgBox.alert(this, "Không đúng định dạng số");
+            return false;
+        }catch(RuntimeException ex){
+            MsgBox.alert(this, "Ngày không đúng định dạng");
+        }
+        return true;
+    }
+
     public void setForm(KhoaHoc kh) {
         txtCD.setText(kh.getMaCD());
         txtGhiChu.setText(kh.getGhiChu());
@@ -133,6 +153,9 @@ public class KhoaHocJDialog extends javax.swing.JDialog {
     }
 
     public void insert() {
+        if(!isValidate()){
+            return;
+        }
         KhoaHoc kh = this.getForm();
         try {
             this.khdao.insert(kh);
@@ -146,6 +169,9 @@ public class KhoaHocJDialog extends javax.swing.JDialog {
     }
 
     public void update() {
+        if(!isValidate()){
+            return;
+        }
         KhoaHoc kh = this.getForm();
         try {
             this.khdao.update(kh);
@@ -161,7 +187,7 @@ public class KhoaHocJDialog extends javax.swing.JDialog {
             MsgBox.alert(this, "Bạn không có quyền xoá khoá học");
         } else if (MsgBox.confirm(this, "Bạn chắc chắn muốn xoá khoá học này")) {
             try {
-                String key = tblDanhSach.getValueAt(row, 0)+"";
+                String key = tblDanhSach.getValueAt(row, 0) + "";
                 this.khdao.delete(key);
                 this.fillToTable();
                 this.clearForm();

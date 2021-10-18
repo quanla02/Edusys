@@ -31,7 +31,7 @@
                   <Group type="102" attributes="0">
                       <Component id="jPanel1" linkSize="3" min="-2" pref="280" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="cboKhoaHoc" linkSize="3" min="-2" pref="285" max="-2" attributes="0"/>
+                      <Component id="lblKhoHoc" linkSize="3" min="-2" pref="285" max="-2" attributes="0"/>
                       <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                   </Group>
               </Group>
@@ -44,7 +44,7 @@
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="1" attributes="0">
-                  <Component id="cboKhoaHoc" linkSize="2" min="-2" max="-2" attributes="0"/>
+                  <Component id="lblKhoHoc" linkSize="2" min="-2" max="-2" attributes="0"/>
                   <Component id="jPanel1" linkSize="2" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
@@ -80,13 +80,16 @@
               </StringArray>
             </Property>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cboChuyenDeActionPerformed"/>
+          </Events>
           <AuxValues>
             <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
           </AuxValues>
         </Component>
       </SubComponents>
     </Container>
-    <Container class="javax.swing.JPanel" name="cboKhoaHoc">
+    <Container class="javax.swing.JPanel" name="lblKhoHoc">
       <Properties>
         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
           <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
@@ -100,7 +103,7 @@
         <Property name="rows" type="int" value="1"/>
       </Layout>
       <SubComponents>
-        <Component class="javax.swing.JComboBox" name="jComboBox2">
+        <Component class="javax.swing.JComboBox" name="cboKhoaHoc">
           <Properties>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
               <StringArray count="4">
@@ -111,6 +114,9 @@
               </StringArray>
             </Property>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cboKhoaHocActionPerformed"/>
+          </Events>
           <AuxValues>
             <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
           </AuxValues>
@@ -173,7 +179,7 @@
                         <Column editable="false" title="M&#xe3; HV" type="java.lang.Object"/>
                         <Column editable="false" title="M&#xe3; NH" type="java.lang.Object"/>
                         <Column editable="false" title="H&#x1ecd; t&#xea;n" type="java.lang.Object"/>
-                        <Column editable="false" title="&#x110;i&#x1ec3;m" type="java.lang.Object"/>
+                        <Column editable="true" title="&#x110;i&#x1ec3;m" type="java.lang.Object"/>
                       </Table>
                     </Property>
                   </Properties>
@@ -184,11 +190,17 @@
               <Properties>
                 <Property name="text" type="java.lang.String" value="Xo&#xe1; kh&#x1ecf;i kho&#xe1; h&#x1ecd;c"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnXoaActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="btnReload">
               <Properties>
                 <Property name="text" type="java.lang.String" value="C&#x1ead;p nh&#x1ead;t &#x111;i&#x1ec3;m"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnReloadActionPerformed"/>
+              </Events>
             </Component>
           </SubComponents>
         </Container>
@@ -269,6 +281,9 @@
               </Layout>
               <SubComponents>
                 <Component class="javax.swing.JTextField" name="txtTimKiem">
+                  <Events>
+                    <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtTimKiemKeyReleased"/>
+                  </Events>
                 </Component>
               </SubComponents>
             </Container>
@@ -276,6 +291,9 @@
               <Properties>
                 <Property name="text" type="java.lang.String" value="Th&#xea;m v&#xe0;o kho&#xe1; h&#x1ecd;c"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnThemActionPerformed"/>
+              </Events>
             </Component>
           </SubComponents>
         </Container>

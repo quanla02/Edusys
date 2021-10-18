@@ -42,6 +42,7 @@ public class DoiMKJDialog extends javax.swing.JDialog {
             Auth.user.setMatKhau(matKhauMoi);
             this.dao.update(Auth.user);
             MsgBox.alert(this, "Đổi mật khẩu thành công");
+            this.dispose();
         }
     }
 
@@ -82,9 +83,19 @@ public class DoiMKJDialog extends javax.swing.JDialog {
 
         btnUpdate.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/edusys/icon/Refresh.png"))); // NOI18N
         btnUpdate.setText("Đồng ý");
+        btnUpdate.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnUpdateActionPerformed(evt);
+            }
+        });
 
         btnCancel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/edusys/icon/No.png"))); // NOI18N
         btnCancel.setText("Huỷ bỏ");
+        btnCancel.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCancelActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -113,10 +124,8 @@ public class DoiMKJDialog extends javax.swing.JDialog {
                         .addGap(4, 4, 4)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel4)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel5)
-                                .addGap(0, 200, Short.MAX_VALUE)))))
-                .addContainerGap(0, Short.MAX_VALUE))
+                            .addComponent(jLabel5))))
+                .addContainerGap(112, Short.MAX_VALUE))
         );
 
         layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {txtConfirmPassword, txtCurrentPassword, txtNewPassword, txtUsername});
@@ -151,6 +160,16 @@ public class DoiMKJDialog extends javax.swing.JDialog {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnUpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUpdateActionPerformed
+        // TODO add your handling code here:
+        doiMatKhau();
+    }//GEN-LAST:event_btnUpdateActionPerformed
+
+    private void btnCancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelActionPerformed
+        // TODO add your handling code here:
+        this.dispose();
+    }//GEN-LAST:event_btnCancelActionPerformed
 
     /**
      * @param args the command line arguments

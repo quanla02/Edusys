@@ -75,6 +75,9 @@
               </StringArray>
             </Property>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cboChuyenDeActionPerformed"/>
+          </Events>
           <AuxValues>
             <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
           </AuxValues>
@@ -323,41 +326,65 @@
               <Properties>
                 <Property name="text" type="java.lang.String" value="Th&#xea;m"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnThemActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="btnSua">
               <Properties>
                 <Property name="text" type="java.lang.String" value="S&#x1eed;a"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnSuaActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="btnXoa">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Xo&#xe1;"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnXoaActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="btnMoi">
               <Properties>
                 <Property name="text" type="java.lang.String" value="M&#x1edb;i"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnMoiActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="btnDau">
               <Properties>
                 <Property name="text" type="java.lang.String" value="|&lt;"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnDauActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="btnTruoc">
               <Properties>
                 <Property name="text" type="java.lang.String" value="&lt;&lt;"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnTruocActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="btnSau">
               <Properties>
                 <Property name="text" type="java.lang.String" value="&gt;&gt;"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnSauActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="btnCuoi">
               <Properties>
                 <Property name="text" type="java.lang.String" value="&gt;|"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnCuoiActionPerformed"/>
+              </Events>
             </Component>
           </SubComponents>
         </Container>
@@ -402,16 +429,19 @@
                   <Properties>
                     <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
                       <Table columnCount="6" rowCount="4">
-                        <Column editable="true" title="M&#xe3; KH" type="java.lang.Object"/>
-                        <Column editable="true" title="Th&#x1edd;i l&#x1b0;&#x1ee3;ng" type="java.lang.Object"/>
-                        <Column editable="true" title="H&#x1ecd;c ph&#xed;" type="java.lang.Object"/>
-                        <Column editable="true" title="Khai gi&#x1ea3;ng" type="java.lang.Object"/>
-                        <Column editable="true" title="T&#x1ea1;o b&#x1edf;i" type="java.lang.Object"/>
-                        <Column editable="true" title="Ng&#xe0;y t&#x1ea1;o" type="java.lang.Object"/>
+                        <Column editable="false" title="M&#xe3; KH" type="java.lang.Object"/>
+                        <Column editable="false" title="Th&#x1edd;i l&#x1b0;&#x1ee3;ng" type="java.lang.Object"/>
+                        <Column editable="false" title="H&#x1ecd;c ph&#xed;" type="java.lang.Object"/>
+                        <Column editable="false" title="Khai gi&#x1ea3;ng" type="java.lang.Object"/>
+                        <Column editable="false" title="T&#x1ea1;o b&#x1edf;i" type="java.lang.Object"/>
+                        <Column editable="false" title="Ng&#xe0;y t&#x1ea1;o" type="java.lang.Object"/>
                       </Table>
                     </Property>
                     <Property name="rowHeight" type="int" value="25"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="tblDanhSachMouseClicked"/>
+                  </Events>
                 </Component>
               </SubComponents>
             </Container>
